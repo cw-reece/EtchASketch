@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch A Sketch</title>
+
+</head>
+
+<body>
+    <div class="instructions"><strong>Instructions:</strong> Drawing will
+        start at a random point. Use the arrow keys to draw lines that will randomly change colors.
+        Click "shake" to reset. "Small", "Medium", "large", and "XL" change line size. "round" and "Square" change line
+        shape.
+    </div>
+    <div class="button">
+        <button class="shake" alt='clear conentent'>Shake!</button>
+        <button class="sizeSmall">small</button>
+        <button class="sizeMed">medium</button>
+        <button class="sizeLarge">large</button>
+        <button class="sizeXl">XL</button>
+        <button class="round">Round</button>
+        <button class="square">Square</button>
+    </div>
+
+    <div class="canvasWrap">
+        <canvas width="1600" height="1000" id="etch-a-sketch"></canvas>
+    </div>
+
+    <style>
+        body {
+            min-height: 100vh;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            background: white;
+            background: url(./child_build.jpg);
+            background-size: cover;
+        }
+
+        canvas {
+            border: 15px solid rgba(0, 0, 0, 0.973);
+            border-radius: 10px;
+            width: 800px;
+            height: 500px;
+            background: white;
+        }
+
+        div.instructions {
+            height: auto;
+            width: 820px;
+            margin: 2px;
+            align-items: center;
+            justify-items: center;
+            padding: 5px;
+            background: beige;
+            background-size: cover;
+            border-radius: 10px;
+            border: 3px solid #e80000;
+        }
+
+        button {
+            background-color: #4CAF50;
+            /* Green */
+            border: 2px solid blue;
+            border-radius: 25px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 3px;
+
+        }
+
+        button.shake {
+            background-color: red;
+            border: 2px solid blue;
+
+            canvas.shake {
+                animation: shake 0.5s linear 1;
+            }
+
+            @keyframes shake {
+
+                10%,
+                90% {
+                    transform: translate3d(-3px, 0, 0);
+                }
+
+                20%,
+                80% {
+                    transform: translate3d(5px, 0, 0);
+                }
+
+                30%,
+                50%,
+                70% {
+                    transform: translate3d(-10px, 0, 0);
+                }
+
+                40%,
+                60% {
+                    transform: translate3d(10px, 0, 0);
+                }
+            }
+    </style>
+    <script src="./etch-a-sketch.js"></script>
+</body>
+
+</html>
